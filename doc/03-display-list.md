@@ -1,4 +1,4 @@
-## 02-create-component
+## 03-display-list
 
 1. Display list
 - repeater and optional directives
