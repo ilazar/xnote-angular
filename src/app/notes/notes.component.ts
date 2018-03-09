@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from './note';
+import { Note } from '../note';
 
 @Component({
   selector: 'app-notes',
@@ -8,7 +8,6 @@ import { Note } from './note';
 })
 export class NotesComponent implements OnInit {
 
-  newNote: Note = new Note();
   selectedNote: Note;
   notes: Note[] = [];
 
@@ -17,9 +16,8 @@ export class NotesComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.notes.push(this.newNote);
-    this.newNote = new Note();
+  onAdd(note: Note) {
+    this.notes.push(note);
   }
 
   onSelect(note: Note) {

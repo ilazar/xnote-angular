@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
+import { NoteDetailComponent } from './note-detail/note-detail.component';
+import { NoteEditComponent } from './note-edit/note-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotesComponent
+    NotesComponent,
+    NoteDetailComponent,
+    NoteEditComponent
   ],
   imports: [
     BrowserModule,
