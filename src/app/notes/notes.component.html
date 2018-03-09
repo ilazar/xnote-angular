@@ -1,7 +1,7 @@
 <h2>New Note</h2>
 <app-note-edit (add)="onAdd($event)"></app-note-edit>
 <h2>Note list</h2>
-<ul class="notes">
+<ul class="notes" *ngIf="notes">
   <li *ngFor="let note of notes"
       (click)="onSelect(note)"
       [class.selected]="note === selectedNote">

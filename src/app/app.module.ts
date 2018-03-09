@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
 import { NoteDetailComponent } from './note-detail/note-detail.component';
 import { NoteEditComponent } from './note-edit/note-edit.component';
+import { NoteService } from './note.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { NoteEditComponent } from './note-edit/note-edit.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
