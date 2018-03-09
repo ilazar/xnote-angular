@@ -1,5 +1,17 @@
+<h2>New Note</h2>
 <div>
   <label>Text
-    <input [(ngModel)]="note.text" placeholder="Enter note text">
+    <input [(ngModel)]="newNote.text" placeholder="Enter note text">
   </label>
+  <input type="submit" value="Add" (click)="onSubmit()">
 </div>
+<h2>Note list</h2>
+<ul class="notes">
+  <li *ngFor="let note of notes"
+      (click)="onSelect(note)"
+      [class.selected]="note === selectedNote">
+    <span class="badge">{{note.text}}</span>
+  </li>
+</ul>
+<h2>Selected Note</h2>
+<div *ngIf="selectedNote">{{selectedNote.text}}</div>

@@ -8,11 +8,21 @@ import { Note } from './note';
 })
 export class NotesComponent implements OnInit {
 
-  note: Note = new Note();
+  newNote: Note = new Note();
+  selectedNote: Note;
+  notes: Note[] = [];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.notes.push(this.newNote);
+    this.newNote = new Note();
+  }
+
+  onSelect(note: Note) {
+    this.selectedNote = note;
+  }
 }
