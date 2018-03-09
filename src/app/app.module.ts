@@ -8,6 +8,7 @@ import { NotesComponent } from './notes/notes.component';
 import { NoteDetailComponent } from './note-detail/note-detail.component';
 import { NoteEditComponent } from './note-edit/note-edit.component';
 import { NoteService } from './note.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NoteService } from './note.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [NoteService],
   bootstrap: [AppComponent]
