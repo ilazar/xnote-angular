@@ -1,1 +1,4 @@
-<div *ngIf="note">{{note.text}}</div>
+<div *ngIf="note">
+  <div>{{note.text}}</div>
+  <button (click)="goBack()">go back</button>
+</div>

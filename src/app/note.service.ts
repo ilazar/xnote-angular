@@ -11,12 +11,16 @@ export class NoteService {
   constructor() {
   }
 
+  createNote(note: Note): Observable<Note> {
+    this.notes.push({...note, id: `${this.notes.length + 1}`});
+    return of(note);
+  }
+
   getNotes(): Observable<Note[]> {
     return of(this.notes);
   }
 
-  createNote(note: Note): Observable<Note> {
-    this.notes.push(note);
-    return of(note);
+  getNote(id: string) {
+    return of(this.notes.find(note => note.id === id));
   }
 }

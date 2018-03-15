@@ -8,7 +8,7 @@ import { NoteDetailComponent } from './note-detail/note-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: '/notes', pathMatch: 'full' },
   { path: 'notes', component: NotesComponent },
-  { path: 'detail/:id', component: NoteDetailComponent },
+  { path: 'note/:id', component: NoteDetailComponent },
 ];
 
 @NgModule({

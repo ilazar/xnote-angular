@@ -2,11 +2,7 @@
 <app-note-edit (add)="onAdd($event)"></app-note-edit>
 <h2>Note list</h2>
 <ul class="notes" *ngIf="notes">
-  <li *ngFor="let note of notes"
-      (click)="onSelect(note)"
-      [class.selected]="note === selectedNote">
-    <span class="badge">{{note.text}}</span>
+  <li *ngFor="let note of notes">
+    <a routerLink="/note/{{note.id}}">{{note.text}}</a>
   </li>
 </ul>
-<h2>Selected Note</h2>
-<app-note-detail [note]="selectedNote"></app-note-detail>
