@@ -1,8 +1,8 @@
-<h2>New Note</h2>
-<app-note-edit (add)="onAdd($event)"></app-note-edit>
+<app-note-edit></app-note-edit>
 <h2>Note list</h2>
 <ul class="notes" *ngIf="notes">
   <li *ngFor="let note of notes">
     <a routerLink="/note/{{note.id}}">{{note.text}}</a>
+    <button (click)="remove(note)">x</button>
   </li>
 </ul>

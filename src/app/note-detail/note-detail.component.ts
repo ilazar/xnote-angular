@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { NoteService } from '../note.service';
@@ -13,7 +13,8 @@ import { Note } from '../note';
 export class NoteDetailComponent implements OnInit {
   note: Note;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private router: Router,
+              private route: ActivatedRoute,
               private noteService: NoteService,
               private location: Location) {
   }
@@ -24,8 +25,11 @@ export class NoteDetailComponent implements OnInit {
       .subscribe(note => this.note = note);
   }
 
+  edit(note: Note) {
+    this.router.navigate(['edit', `${note._id}`]);
+  }
+
   goBack() {
     this.location.back();
   }
-
 }
